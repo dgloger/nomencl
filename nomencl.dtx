@@ -40,7 +40,7 @@
 %<*package|driver>
 % \fi
 %         \ProvidesFile{nomencl.dtx}%
-          [2005/09/22 v4.2 Nomenclature package (LN)]
+          [2014/08/21 v4.3 Nomenclature package]
 %
 % \iffalse
 %</package|driver>
@@ -107,7 +107,8 @@
 % Amended documentation accordingly.}
 % \changes{v4.1 (2005/04/27)}{2005/04/27}{Improvements to the documentation,
 % including hyperref support}
-%
+% \changes{v4.2 (2005/09/22)}{2005/09/22}{TODO: Improvements by LN}
+% \changes{v4.3 (2014/08/21)}{2014/08/21}{Allow language ngerman (nowadays used new German spelling), remove link to sarovar.org -- it is \href{https://lists.debian.org/debian-devel/2014/04/msg00362.html}{dead forever}, new link to https://github.com/dgloger/nomencl.}
 % \GetFileInfo{nomencl.dtx}
 %
 %
@@ -126,8 +127,9 @@
 %   \\ A Package to Create a Nomenclature}
 % \author{Boris Veytsman\thanks{Up to version v2.2 (1996/11/25)}\\
 %       Bernd Schandl\thanks{Up to version v3.1c (2001/10/02)}\\
-%       Lee Netherton \& CV Radhakrishnan\thanks{Up to version v4.0 (2005/03/31)}\\\\
-%    {\small \href{http://sarovar.org/projects/nomencl}{http://sarovar.org/projects/nomencl}}}
+%       Lee Netherton \& CV Radhakrishnan\thanks{Up to version v4.0 (2005/03/31)}\\
+%       D. Gloger\\\\
+%    {\small \href{https://github.com/dgloger/nomencl}{https://github.com/dgloger/nomencl}} }
 % \date{Printed on \today}
 % \maketitle
 %
@@ -324,7 +326,7 @@
 %   with other glossary packages.
 % \item[noncompatible] Do not run in compatibility mode. (default)
 % \item[\hspace{-\labelsep}]
-%   \textbf{croatian, danish, english, french, german, italian, polish,
+%   \textbf{croatian, danish, english, french, german, ngerman, italian, polish,
 %     portuguese, russian, spanish, ukrainian}
 %   The reference texts and the nomenclature title will appear in the
 %   corresponding language. Note that in order to use Russian or Ukrainian,
@@ -850,7 +852,7 @@
 % version 1.2 of the license, or (at your option) any later version.
 %
 % The most recent release of the \package{nomencl} package can always
-% be found at \url{http://sarovar.org/projects/nomencl}.
+% be found at \url{https://github.com/dgloger/nomencl}.
 % Usually, the same version is also available at
 % \url{CTAN/macros/latex/contrib/supported/nomencl/}.
 %
@@ -886,7 +888,12 @@
 % \bibitem[7]{veyt:pack:1996}
 % Veytsman, Boris (1996).
 % \newblock Package nomencl, Version 4.0.
+% TODO: new link
 % \newblock \url{http://sarovar.org/projects/nomencl} (2000/09/15).
+% \bibitem[6]{spitzm:lyx:wiki:tips:nomenclature:20110415}
+% Spitzm\"uller, J\"urgen.
+% \newblock LyX wiki: Tips: Nomenclature: Nomenclature and ngerman (German new spelling).
+% \newblock \url{http://wiki.lyx.org/Tips/Nomenclature} (2011/04/15).
 % \end{thebibliography}}
 %
 %
@@ -984,6 +991,8 @@
   \def\eqdeclaration#1{, siehe Gleichung\nobreakspace(#1)}%
   \def\pagedeclaration#1{, Seite\nobreakspace#1}%
   \def\nomname{Symbolverzeichnis}}
+\DeclareOption{ngerman}{% German (new spelling)
+  \ExecuteOptions{german}}
 \DeclareOption{italian}{%
 \def\eqdeclaration#1{, vedi equazione\nobreakspace(#1)}%
 \def\pagedeclaration#1{, pagina\nobreakspace#1}%
